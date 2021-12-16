@@ -1,15 +1,1 @@
-<ng-template  #aaa>
-  <div style="width: 100%; margin: 10px;">
-    <div #text class="animation-block">
-      text
-    </div>
-  </div>
-</ng-template>
-<ng-container #container>
-</ng-container>
-<br><br>
-<button (click)="makeWidthAnimation()">Start width animation</button>
-<button (click)="makeTransitionAnimation()">Start transition animation</button>
-<br>
-<input #count type="number" value=5/>
-<button (click)="generateBlock()">Generate block</button>
+<router-outlet></router-outlet>
