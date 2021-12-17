@@ -1,1 +1,43 @@
-<p>test-component works!</p>
+<div class="container">
+    <div class="container-answer">
+        <ng-container #containerAnswer>
+        </ng-container>
+    </div>
+    <div class="container-question">
+        <ng-container #containerQuestion>
+        </ng-container>
+    </div>
+    <div  class="container-preview">
+        <ng-container #containerPreview>
+        </ng-container>
+    </div>
+</div>
+
+<style>
+    .container{
+        background-color: lightcoral;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .container-answer,
+    .container-question,
+    .container-preview {
+        flex: 1 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container-question {
+        background-color: lightblue;
+    }
+
+    :host /deep/ app-test-plug {
+        display: block;
+        width: 350px;
+        height: 110px;
+        transition: transform 2s;
+    }
+    </style>
