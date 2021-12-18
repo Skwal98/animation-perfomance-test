@@ -12,8 +12,18 @@
         </ng-container>
     </div>
 </div>
+<div  class="container-next-preview">
+    <ng-container #containerNextPreview>
+    </ng-container>
+</div>
 
 <style>
+    :host {
+        overflow: hidden;
+        max-height: 100vh;
+        display: block;
+    }
+
     .container{
         background-color: lightcoral;
         height: 100vh;
@@ -21,13 +31,32 @@
         flex-direction: column;
     }
 
-    .container-answer,
     .container-question,
     .container-preview {
         flex: 1 0;
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative;
+    }
+
+    .container-answer {
+        flex: 1 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        position: relative;
+        flex-direction: column;
+    }
+
+    :host .container-answer /deep/ app-test-plug {
+        position: relative;
+    }
+
+    .container-next-preview {
+        display: flex;
+        justify-content: center;
+        position: relative;
     }
 
     .container-question {
@@ -35,6 +64,7 @@
     }
 
     :host /deep/ app-test-plug {
+        position: absolute;
         display: block;
         width: 350px;
         height: 110px;

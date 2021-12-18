@@ -1,4 +1,5 @@
-import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnInit, Output } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-test-plug',
@@ -7,13 +8,15 @@ import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnInit } fro
 })
 export class TestPlugComponent implements OnInit, AfterViewInit {
 
+  @Output() transitionEnd: Subject<void> = new Subject();
+
   id!: string;
   constructor(private _cd: ChangeDetectorRef) { 
   }
 
   @HostListener('transitionend')
   onTransitionEnd() {
-    console.log('transitionend');
+    this.transitionEnd.complete();
   }
 
   ngAfterViewInit(): void {
