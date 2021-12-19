@@ -43,14 +43,16 @@
     .container-answer {
         flex: 1 0;
         display: flex;
-        justify-content: space-around;
+        justify-content: flex-end;
         align-items: center;
         position: relative;
         flex-direction: column;
+        overflow: hidden;
     }
 
     :host .container-answer /deep/ app-test-plug {
         position: relative;
+        margin-bottom: 5vh;
     }
 
     .container-next-preview {
@@ -60,14 +62,14 @@
     }
 
     .container-question {
-        background-color: lightblue;
+        background-color: rgb(186, 192, 194);
     }
 
     :host /deep/ app-test-plug {
         position: absolute;
         display: block;
         width: 350px;
-        height: 110px;
+        min-height: 110px;
         transition: transform 2s;
     }
     </style>
